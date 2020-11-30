@@ -44,6 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // Display nav
 const firstNavLink = document.querySelector('a')
 firstNavLink.textContent = siteContent.nav["nav-item-1"]
+
 const secondNavLink = firstNavLink.nextElementSibling
 secondNavLink.textContent = siteContent.nav["nav-item-2"]
 const thirdNavLink = secondNavLink.nextElementSibling
@@ -140,3 +141,21 @@ contactEmail.textContent = siteContent.contact.email;
 
 const footer = document.querySelector('footer');
 footer.textContent = siteContent.footer.copyright;
+
+// Add new content
+
+
+
+const blogLink = document.createElement("a");
+blogLink.textContent = 'Blog';
+blogLink.href = '#';
+document.querySelector('nav').appendChild(blogLink);
+
+const ssLink = document.createElement("a");
+ssLink.textContent = 'Secret Sauce';
+ssLink.href = '#';
+document.querySelector('nav').prepend(ssLink);
+
+const allNavLinks = document.querySelectorAll('a');
+
+allNavLinks.forEach((item) => item.style.color = 'green');
